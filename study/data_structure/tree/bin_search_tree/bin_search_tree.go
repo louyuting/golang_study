@@ -1,22 +1,10 @@
 package binary_search_tree
 
 /**
-定义树的基本操作
-*/
-//type Tree interface {
-//	Put(k, v string)
-//	Get(k string) string //查询
-//	Delete(k string)  //删除
-//	Size() int     //树的大小
-//	Min() string      //最小键
-//	DeleteMin()    //删除最小键
-//}
-
-/**
 定义数据结构
 */
 type BinarySearchNode struct {
-	key   string
+	key   int32
 	value string
 	left  *BinarySearchNode
 	right *BinarySearchNode
@@ -27,10 +15,10 @@ type BinarySearchNode struct {
 */
 type BinarySearchTree struct {
 	root *BinarySearchNode
-	size int
+	size int32
 }
 
-func newBinarySearchNode(k, v string) *BinarySearchNode {
+func newBinarySearchNode(k int32, v string) *BinarySearchNode {
 	return &BinarySearchNode{
 		key:   k,
 		value: v,
@@ -49,7 +37,7 @@ func newBinarySearchTree() *BinarySearchTree {
 /**
 返回是否插入成功
 */
-func (bst *BinarySearchTree) Put(k, v string) bool {
+func (bst *BinarySearchTree) Put(k int32, v string) bool {
 	if bst.root == nil {
 		bst.root = &BinarySearchNode{
 			key:   k,
@@ -67,6 +55,20 @@ func (bst *BinarySearchTree) Put(k, v string) bool {
 	return succ
 }
 
+func (bst *BinarySearchTree) Delete(k int32) bool {
+	if bst == nil {
+		panic("binary search tree is nil")
+	}
+	return delete(bst.root, k) != nil
+}
+
+func (bst *BinarySearchTree) Get(k int32) (string, bool) {
+	if bst == nil {
+		panic("binary search tree is nil")
+	}
+	return get(bst.root, k)
+}
+
 /**
 insert or update
 precondition: root is not nil
@@ -74,14 +76,14 @@ precondition: root is not nil
 如果当前结点的key大于k, 那么递归插入左结点；
 如果当前结点的key小于k, 那么递归插入右结点；
 */
-func insert(root *BinarySearchNode, k, v string) bool {
+func insert(root *BinarySearchNode, k int32, v string) bool {
 	if root == nil {
 		// occur only root is nil
 		panic("root is nil")
 	}
 	if k < root.key && root.left != nil {
 		//recursively insert into left
-		return insert(root, k, v)
+		return insert(root.left, k, v)
 	} else if k < root.key && root.left == nil {
 		//insert into left
 		root.left = &BinarySearchNode{
@@ -93,7 +95,7 @@ func insert(root *BinarySearchNode, k, v string) bool {
 		return true
 	} else if k > root.key && root.right != nil {
 		//recursively insert into right
-		return insert(root, k, v)
+		return insert(root.right, k, v)
 	} else if k > root.key && root.right == nil {
 		root.right = &BinarySearchNode{
 			key:   k,
@@ -111,51 +113,67 @@ func insert(root *BinarySearchNode, k, v string) bool {
 
 /**
 delete a node named k
-
 */
-func delete(root *BinarySearchNode, k string) bool {
+func delete(root *BinarySearchNode, k int32) *BinarySearchNode {
 	if root == nil {
 		panic("delete from nil tree")
 	}
 	if root.key > k && root.left != nil {
-		return delete(root.left, k)
+		root.left = delete(root.left, k)
 	} else if root.key > k && root.left == nil {
 		// k is not existed, return success
-		return true
+		return nil
 	} else if root.key < k && root.right != nil {
-		return delete(root.right, k)
+		root.right = delete(root.right, k)
 	} else if root.key < k && root.right == nil {
 		// k is not existed, return success
-		return true
+		return nil
 	} else {
-		// bsn.key == key
+		// root.key == key， delete current node
 		if root.left != nil && root.right != nil {
 			// both left child and right child of this bsn are not nill
 			// find the min key which is greater than root.key
-			root.key = findMin(root.right)
+			minNode := findMin(root.right)
+			root.key = minNode.key
+			root.value = minNode.value
 			delete(root.right, root.key)
-			return true
 		} else {
+			// single child or no child
 			if root.left == nil {
-				root = root.left
+				root = root.right
 			} else {
 				root = root.left
 			}
-			return true
 		}
+	}
+	return root
+}
+
+func get(root *BinarySearchNode, k int32) (string, bool) {
+	if root == nil {
+		return "", false
+	}
+	if root.key == k {
+		return root.value, true
+	} else if root.key > k && root.left != nil {
+		return get(root.left, k)
+	} else if root.key < k && root.right != nil {
+		return get(root.right, k)
+	} else {
+		return "", false
 	}
 }
 
 /**
-从root结点开始找到最小的节点
+从root结点开始找到最小key的节点
 */
-func findMin(root *BinarySearchNode) string {
+func findMin(root *BinarySearchNode) *BinarySearchNode {
 	if root == nil {
 		panic("the tree is nil")
 	}
 	if root.left != nil {
 		return findMin(root.left)
 	} else {
-		return root.key
+		return root
 	}
 }
