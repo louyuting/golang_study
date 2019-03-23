@@ -4,7 +4,7 @@ package binary_search_tree
 定义数据结构
 */
 type BinarySearchNode struct {
-	key   int32
+	key   int
 	value string
 	left  *BinarySearchNode
 	right *BinarySearchNode
@@ -15,10 +15,10 @@ type BinarySearchNode struct {
 */
 type BinarySearchTree struct {
 	root *BinarySearchNode
-	size int32
+	size int
 }
 
-func newBinarySearchNode(k int32, v string) *BinarySearchNode {
+func newBinarySearchNode(k int, v string) *BinarySearchNode {
 	return &BinarySearchNode{
 		key:   k,
 		value: v,
@@ -37,7 +37,7 @@ func newBinarySearchTree() *BinarySearchTree {
 /**
 返回是否插入成功
 */
-func (bst *BinarySearchTree) Put(k int32, v string) bool {
+func (bst *BinarySearchTree) Put(k int, v string) bool {
 	if bst.root == nil {
 		bst.root = &BinarySearchNode{
 			key:   k,
@@ -55,14 +55,14 @@ func (bst *BinarySearchTree) Put(k int32, v string) bool {
 	return succ
 }
 
-func (bst *BinarySearchTree) Delete(k int32) bool {
+func (bst *BinarySearchTree) Delete(k int) bool {
 	if bst == nil {
 		panic("binary search tree is nil")
 	}
 	return delete(bst.root, k) != nil
 }
 
-func (bst *BinarySearchTree) Get(k int32) (string, bool) {
+func (bst *BinarySearchTree) Get(k int) (string, bool) {
 	if bst == nil {
 		panic("binary search tree is nil")
 	}
@@ -76,7 +76,7 @@ precondition: root is not nil
 如果当前结点的key大于k, 那么递归插入左结点；
 如果当前结点的key小于k, 那么递归插入右结点；
 */
-func insert(root *BinarySearchNode, k int32, v string) bool {
+func insert(root *BinarySearchNode, k int, v string) bool {
 	if root == nil {
 		// occur only root is nil
 		panic("root is nil")
@@ -114,7 +114,7 @@ func insert(root *BinarySearchNode, k int32, v string) bool {
 /**
 delete a node named k
 */
-func delete(root *BinarySearchNode, k int32) *BinarySearchNode {
+func delete(root *BinarySearchNode, k int) *BinarySearchNode {
 	if root == nil {
 		panic("delete from nil tree")
 	}
@@ -149,7 +149,7 @@ func delete(root *BinarySearchNode, k int32) *BinarySearchNode {
 	return root
 }
 
-func get(root *BinarySearchNode, k int32) (string, bool) {
+func get(root *BinarySearchNode, k int) (string, bool) {
 	if root == nil {
 		return "", false
 	}

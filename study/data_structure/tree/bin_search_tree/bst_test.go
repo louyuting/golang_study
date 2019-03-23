@@ -2,6 +2,7 @@ package binary_search_tree
 
 import (
 	"fmt"
+	"strconv"
 	"testing"
 )
 
@@ -14,7 +15,7 @@ import (
 / \    /\   \    \
 7  16 25 30  42   60
 */
-func prepare_data() (*BinarySearchNode, int32) {
+func prepare_data() (*BinarySearchNode, int) {
 	root := &BinarySearchNode{
 		key:   33,
 		value: "33",
@@ -139,4 +140,48 @@ func TestBinarySearchTree_Delete(t *testing.T) {
 	ok := bst.Delete(33)
 	fmt.Println(ok)
 	fmt.Println(bst.Get(7))
+}
+
+func TestBinarySearchTree_Put2(b *testing.T) {
+	root, num := prepare_data()
+	bst := &BinarySearchTree{
+		root: root,
+		size: num,
+	}
+	for i := 0; i < 10000; i++ {
+		bst.Put(int(i), strconv.Itoa(i))
+	}
+	for i := 0; i < 10000; i++ {
+		fmt.Println(bst.Get(int(i)))
+	}
+}
+
+func TestBinarySearchTree_Put3(b *testing.T) {
+	prepare_data()
+	m := make(map[int]*BinarySearchNode)
+	for i := 0; i < 10000; i++ {
+		m[i] = &BinarySearchNode{
+			key:   i,
+			value: strconv.Itoa(i),
+			left:  nil,
+			right: nil,
+		}
+	}
+	for i := 0; i < 10000; i++ {
+		fmt.Println(m[i])
+	}
+}
+
+func BenchmarkBinarySearchTree_Put(b *testing.B) {
+	root, num := prepare_data()
+	bst := &BinarySearchTree{
+		root: root,
+		size: num,
+	}
+	for i := 0; i < 10000; i++ {
+		bst.Put(int(i), strconv.Itoa(i))
+	}
+	for i := 0; i < 10000; i++ {
+		bst.Get(int(i))
+	}
 }

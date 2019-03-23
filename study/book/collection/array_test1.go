@@ -1,18 +1,18 @@
-package collection
+package main
 
 import "fmt"
 
 func main() {
 	fmt.Println("--数组声明和默认初始值--------------------------------")
 	var array [5]int
-	for _, val := range array {
-		fmt.Println(val)
+	for idx, val := range array {
+		fmt.Println("idx=", idx, "; val:=", val)
 	}
 
 	fmt.Println("--使用字面量声明数组--------------------------------")
 	array2 := [5]int{1, 2, 3, 4, 5}
-	for _, val := range array2 {
-		fmt.Println(val)
+	for idx, val := range array2 {
+		fmt.Println("idx=", idx, "; val:=", val)
 	}
 
 	fmt.Println("--自动计算数组长度--------------------------------")
@@ -75,5 +75,4 @@ func main() {
 	for _, val := range array9 {
 		fmt.Println(*val)
 	}
-
 }
