@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"study_golang/study/data_structure/tree/trie_tree"
 	"time"
 	"unsafe"
 )
@@ -20,8 +19,11 @@ func GetRandomString(l int) string {
 }
 
 func main() {
-	fmt.Println(GetRandomString(32))
-	fmt.Println(time.Now().UnixNano())
+	//fmt.Println(GetRandomString(32))
+	//fmt.Println(time.Now().UnixNano())
+	//fmt.Println(unsafe.Sizeof(trie_tree.TrieNode{}))
 
-	fmt.Println(unsafe.Sizeof(trie_tree.TrieNode{}))
+	fmt.Println(unsafe.Sizeof(int(1)))
+	fmt.Println(unsafe.Sizeof(int64(1)))
+
 }
