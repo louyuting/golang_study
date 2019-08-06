@@ -1,4 +1,4 @@
-package net
+package main
 
 import (
 	"fmt"
@@ -33,6 +33,7 @@ func main() {
 		io.WriteString(w, "Hello, world!\n")
 	}
 	http.HandleFunc("/hello", helloHandler)
+	http.HandleFunc("/", helloHandler)
 
 	http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))

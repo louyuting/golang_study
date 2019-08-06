@@ -4,6 +4,15 @@ import "fmt"
 
 func main() {
 	fmt.Println("--切片创建和初始化：make和切片字面量--------------------------------")
+	sle := make([]string, 0, 100)
+	for _, val := range sle {
+		fmt.Println("test: ", val)
+	}
+	sle = append(sle, "1111")
+	for _, val := range sle {
+		fmt.Println("test2: ", val)
+	}
+	
 	slice := make([]string, 5)
 	for _, val := range slice {
 		fmt.Println(val)
@@ -55,5 +64,35 @@ func main() {
 	for idx, val := range slice9 {
 		fmt.Println(idx, ": ", val)
 	}
+	
+	fmt.Println("------------------slice10 append----------------")
+	slice10 := []string{"Red", "Blue", "Yellow", "Green", "Pink"}
+	pass_slice(slice10)
+	for idx, val := range slice10 {
+		fmt.Println(idx, ": ", val)
+	}
+	
+	slice11 := make([]string, 5)
+	slice11 = append(slice11, "hello")
+	for _,s := range slice11 {
+		fmt.Println(s)
+	}
+	
+	slice12 := make([]string, 0, 5)
+	slice12 = append(slice12, "hello")
+	for _,s := range slice12 {
+		fmt.Println(s)
+	}
+	
+	fmt.Println("test slice 13")
+	slice13 := []int32{1,2,3,4,5}
+	slice14 := []int32{11,21,31,41,51}
+	slice13 = append(slice13, slice14...)
+	for _, value := range slice13 {
+		fmt.Println("slice13: ", value)
+	}
+}
 
+func pass_slice(sl []string) {
+	sl[1] = "aaaaaaa--"
 }

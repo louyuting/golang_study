@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
-	"unsafe"
 )
 
 func GetRandomString(l int) string {
@@ -18,12 +17,38 @@ func GetRandomString(l int) string {
 	return string(result)
 }
 
+type I interface {
+	Get() string
+}
+type III struct {
+	s string
+}
+
+func (i *III) Get() string {
+	return i.s
+}
+
 func main() {
 	//fmt.Println(GetRandomString(32))
 	//fmt.Println(time.Now().UnixNano())
 	//fmt.Println(unsafe.Sizeof(trie_tree.TrieNode{}))
-
-	fmt.Println(unsafe.Sizeof(int(1)))
-	fmt.Println(unsafe.Sizeof(int64(1)))
-
+	
+	//fmt.Println(unsafe.Sizeof(int(1)))
+	//fmt.Println(unsafe.Sizeof(int64(1)))
+	
+	var a interface{} = &III{
+		s: "test",
+	}
+	b, ok := a.(III)
+	if ok {
+		fmt.Println("yes")
+		fmt.Println("b=", b.Get())
+	} else {
+		fmt.Println("no")
+	}
+	
+	tt := time.Now()
+	fmt.Println(tt.Unix())
+	fmt.Println(tt.Nanosecond())
+	fmt.Println(tt.UnixNano())
 }
