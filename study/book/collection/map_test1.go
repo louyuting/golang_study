@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	fmt.Println("--Map创建和初始化------------------------------------")
 	// 创建一个map, key是String，value是int
-	dict := make(map[string]int, 1000)
+	dict := make(map[string]int)
 	fmt.Println("len111=", len(dict))
 	var dm map[string]string
 	fmt.Println("len111=", len(dm))
@@ -37,26 +37,29 @@ func main() {
 		fmt.Println("k=", k, ";", "v=", v)
 	}
 	
-	fmt.Println("--------------- passMap ---------------")
+	fmt.Println("--------------- map作为函数传参 ---------------")
 	m := make(map[string]string)
 	m["1"] = "0"
 	m["11"] = "0"
 	m["111"] = "0"
 	m["1111"] = "0"
 	fmt.Println(m)
+	fmt.Printf("m outer address %p \n", m)
 	passMap(m)
+	fmt.Printf("post m outer address %p \n", m)
+	fmt.Println("output m:")
 	for k, v := range m {
 		fmt.Println("k=", k, ";", "v=", v)
 	}
 	
-	fmt.Println("test m2")
 	m2 := make(map[string]string)
 	v2 := m2["test1"]
 	fmt.Println(v2)
 	for k, v := range m2 {
 		fmt.Println("k=", k, ";", "v=", v)
 	}
-	fmt.Println("test m3")
+	
+	fmt.Println("--------------- map value是slice ---------------")
 	m3 := make(map[string][]string)
 	v3 := m3["test1"]
 	if v3 == nil {
@@ -76,6 +79,7 @@ func main() {
 }
 
 func passMap(m map[string]string) {
-	m["1"] = "1111111"
-	fmt.Println(m)
+	fmt.Printf("m inner address %p \n", m)
+	m["11111111"] = "11111111"
+	fmt.Printf("post m inner address %p \n", m)
 }

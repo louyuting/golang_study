@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	fmt.Println("--切片创建和初始化：make和切片字面量--------------------------------")
@@ -67,10 +70,15 @@ func main() {
 	
 	fmt.Println("------------------slice10 append----------------")
 	slice10 := []string{"Red", "Blue", "Yellow", "Green", "Pink"}
+	fmt.Println("before-len:", len(slice10))
+	fmt.Println("before-cap:", cap(slice10))
 	pass_slice(slice10)
+	fmt.Println("after-len:", len(slice10))
+	fmt.Println("after-cap:", cap(slice10))
 	for idx, val := range slice10 {
 		fmt.Println(idx, ": ", val)
 	}
+	
 	
 	slice11 := make([]string, 5)
 	slice11 = append(slice11, "hello")
@@ -95,4 +103,9 @@ func main() {
 
 func pass_slice(sl []string) {
 	sl[1] = "aaaaaaa--"
+	for i:=0; i<100000; i++ {
+		sl = append(sl, strconv.Itoa(i))
+	}
+	fmt.Println("pass_slice-len:", len(sl))
+	fmt.Println("pass_slice-cap:", cap(sl))
 }
