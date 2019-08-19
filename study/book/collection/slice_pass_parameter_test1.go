@@ -69,7 +69,6 @@ func main()  {
 	fmt.Printf("post sa address is %p \n", sa)
 	fmt.Println("post sa=", sa)
 	
-	
 	fmt.Println("------------------------slice1 -------------------------")
 	slice1 := make([]string, 5, 10)
 	fmt.Printf("slice1 outer content and pointer: %v, %p\n", slice1, slice1)
