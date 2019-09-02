@@ -36,14 +36,14 @@ func main() {
 	for k, v := range dict {
 		fmt.Println("k=", k, ";", "v=", v)
 	}
-	
+
 	ttt := make(map[string]string)
 	v2 := ttt["test1"]
 	fmt.Println(v2)
 	for k, v := range ttt {
 		fmt.Println("k=", k, ";", "v=", v)
 	}
-	
+
 	fmt.Println("--------------- map value是slice ---------------")
 	mt3 := make(map[string][]string)
 	v3 := mt3["test1"]
@@ -59,19 +59,21 @@ func main() {
 			fmt.Println("slice value ", vvv)
 		}
 	}
-	
+
 	fmt.Println("--------------- m ---------------")
 	m := make(map[string]string)
 	m["1"] = "0"
 	fmt.Printf("m outer address %p, m=%v \n", m, m)
 	passMap(m)
 	fmt.Printf("post m outer address %p, m=%v \n", m, m)
-	
+
 	fmt.Println("--------------- m2 ---------------")
-	var m2 map[string]string//未初始化
+	var m2 map[string]string //未初始化
 	fmt.Printf("m2 outer address %p, m=%v \n", m2, m2)
 	passMapNotInit(m2)
 	fmt.Printf("post m2 outer address %p, m=%v \n", m2, m2)
+
+	fmt.Println(4 << (^uintptr(0) >> 63))
 }
 
 func passMap(m map[string]string) {
@@ -80,9 +82,9 @@ func passMap(m map[string]string) {
 	fmt.Printf("post m inner address %p \n", m)
 }
 
-func passMapNotInit(m map[string]string)  {
-	fmt.Printf("inner: %v, %p\n",m, m)
+func passMapNotInit(m map[string]string) {
+	fmt.Printf("inner: %v, %p\n", m, m)
 	m = make(map[string]string, 0)
-	m["a"]="11"
-	fmt.Printf("inner: %v, %p\n",m, m)
+	m["a"] = "11"
+	fmt.Printf("inner: %v, %p\n", m, m)
 }

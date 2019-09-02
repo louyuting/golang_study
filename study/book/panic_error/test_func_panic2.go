@@ -1,4 +1,4 @@
-package panic_error
+package main
 
 import (
 	"fmt"

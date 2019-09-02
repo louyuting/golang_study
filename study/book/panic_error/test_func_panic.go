@@ -1,8 +1,16 @@
-package panic_error
+package main
 
 import "fmt"
 
 func main() {
+	defer func() {
+		fmt.Println("d")
+		if err := recover(); err != nil {
+			fmt.Println(err) // 这里的err其实就是panic传入的内容
+		}
+		fmt.Println("e")
+	}()
+
 	str := "LOU"
 	switch str {
 	case "YU":
@@ -16,5 +24,4 @@ func main() {
 	default:
 		panic("Invalid str")
 	}
-
 }
