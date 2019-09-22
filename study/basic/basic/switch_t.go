@@ -8,7 +8,7 @@ func number() int {
 }
 
 func main() {
-	
+
 	finger := 4
 	switch finger {
 	case 1:

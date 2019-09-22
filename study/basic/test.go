@@ -28,14 +28,30 @@ func (i *III) Get() string {
 	return i.s
 }
 
+const (
+	mutexLocked = 1 << iota // mutex is locked
+	mutexWoken
+	mutexStarving
+	mutexWaiterShift = iota
+
+	starvationThresholdNs = 1e6
+)
+
 func main() {
+
+	fmt.Println(mutexLocked)
+	fmt.Println(mutexWoken)
+	fmt.Println(mutexStarving)
+	fmt.Println(mutexWaiterShift)
+	fmt.Println(starvationThresholdNs)
+
 	//fmt.Println(GetRandomString(32))
 	//fmt.Println(time.Now().UnixNano())
 	//fmt.Println(unsafe.Sizeof(trie_tree.TrieNode{}))
-	
+
 	//fmt.Println(unsafe.Sizeof(int(1)))
 	//fmt.Println(unsafe.Sizeof(int64(1)))
-	
+
 	var a interface{} = &III{
 		s: "test",
 	}
@@ -46,7 +62,7 @@ func main() {
 	} else {
 		fmt.Println("no")
 	}
-	
+
 	tt := time.Now()
 	fmt.Println(tt.Unix())
 	fmt.Println(tt.Nanosecond())

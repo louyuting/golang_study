@@ -5,10 +5,10 @@ import (
 	"testing"
 )
 
-func no_go_pool()  {
+func no_go_pool() {
 	//start := time.Now()
 	wg := new(sync.WaitGroup)
-	
+
 	for i := 0; i < 10000; i++ {
 		wg.Add(1)
 		go func(n int) {
@@ -19,7 +19,7 @@ func no_go_pool()  {
 		}(i)
 	}
 	wg.Wait()
-	
+
 	//end := time.Now()
 	//fmt.Println(end.Sub(start))
 }
@@ -28,10 +28,10 @@ func go_pool() {
 	//start := time.Now()
 	wg := new(sync.WaitGroup)
 	data := make(chan int, 100)
-	
+
 	for i := 0; i < 10; i++ {
 		wg.Add(1)
-		
+
 		go func(n int) {
 			defer wg.Done()
 			for _ = range data {
@@ -41,11 +41,11 @@ func go_pool() {
 			}
 		}(i)
 	}
-	
+
 	for i := 0; i < 10000; i++ {
 		data <- i
 	}
-	
+
 	close(data)
 	wg.Wait()
 	//end := time.Now()
@@ -56,11 +56,11 @@ type Worker struct {
 	Func func()
 }
 
-func go_pool_with_func()  {
+func go_pool_with_func() {
 	var wg sync.WaitGroup
 	channels := make(chan Worker, 10)
-	
-	for i:=0; i<5; i++ {
+
+	for i := 0; i < 5; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
@@ -69,7 +69,7 @@ func go_pool_with_func()  {
 			}
 		}()
 	}
-	
+
 	for i := 0; i < 10000; i++ {
 		j := i
 		wk := Worker{
@@ -84,7 +84,6 @@ func go_pool_with_func()  {
 	wg.Wait()
 }
 
-
 //func main()  {
 //	fmt.Println("=================no_go_pool=====================")
 //	no_go_pool()
@@ -92,7 +91,6 @@ func go_pool_with_func()  {
 //	fmt.Println("=================go_pool=====================")
 //	go_pool()
 //}
-
 
 func BenchmarkGopool(b *testing.B) {
 	for i := 0; i < b.N; i++ {

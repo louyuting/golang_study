@@ -21,6 +21,9 @@ func (u *user2) changeEmail(email string) {
 }
 
 func main() {
+
+	fmt.Println(4 << (^uintptr(0) >> 63))
+
 	fmt.Println("--user2的值来调用使用值接受者的方法, 实际上是bill的一个副本调用notify方法---------------------------")
 	bill := user2{"BIll", "bill@email.com"}
 	bill.notify()

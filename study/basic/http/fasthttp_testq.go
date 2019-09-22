@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/valyala/fasthttp"
 	"fmt"
+	"github.com/valyala/fasthttp"
 )
 
 type MyHandler struct {
@@ -21,13 +21,13 @@ func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	fmt.Fprintf(ctx, "Hi there! RequestURI is %q", ctx.RequestURI())
 }
 
-func main()  {
+func main() {
 	// pass bound struct method to fasthttp
 	myHandler := &MyHandler{
 		foobar: "foobar",
 	}
 	fasthttp.ListenAndServe(":8080", myHandler.HandleFastHTTP)
-	
+
 	// pass plain function to fasthttp
 	fasthttp.ListenAndServe(":8081", fastHTTPHandler)
 }
