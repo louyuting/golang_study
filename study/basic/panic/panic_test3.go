@@ -6,6 +6,5 @@ func main() {
 	if err := recover(); err != nil {
 		log.Printf("recover: %v", err)
 	}
-	
-	panic(".")
+	panic("sim lou.")
 }

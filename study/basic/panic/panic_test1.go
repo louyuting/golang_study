@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	panic("qwertyuiop.")
+	panic("sim lou.")
 }

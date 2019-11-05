@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-	defer log.Println("ABCDEFGHIJK")
-
+	defer log.Println("defer sim lou")
 	fmt.Println("ending")
 }

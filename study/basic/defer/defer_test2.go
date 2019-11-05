@@ -6,9 +6,8 @@ import (
 )
 
 func main() {
-	for i := 0; i < 6; i++ {
-		defer log.Println("qwertyuiop" + strconv.Itoa(i) + ".")
+	for i := 1; i <= 6; i++ {
+		defer log.Println("defer sim lou-" + strconv.Itoa(i) + ".")
 	}
-
 	log.Println("ending.")
 }

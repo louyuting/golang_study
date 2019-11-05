@@ -6,8 +6,8 @@ import (
 
 func main() {
 	func() {
-		defer log.Println("defer.qwertyuiop.")
+		defer log.Println("defer sim lou.")
 	}()
 
-	log.Println("main.qwertyuiop.")
+	log.Println("main.ending.")
 }

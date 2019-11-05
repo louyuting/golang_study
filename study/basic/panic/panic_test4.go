@@ -1,6 +1,9 @@
 package main
 
-import "log"
+import (
+	"log"
+	"time"
+)
 
 func main() {
 	go func() {
@@ -9,7 +12,7 @@ func main() {
 				log.Printf("recover: %v", err)
 			}
 		}()
+		panic("aim lou 2.")
 	}()
-	
-	panic("qwertyuiop.")
+	time.Sleep(1 * time.Second)
 }

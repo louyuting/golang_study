@@ -7,8 +7,8 @@ import (
 func main() {
 	defer func() {
 		if e := recover(); e != nil {
-			log.Println("qwertyuiop.")
+			log.Println("defer sim lou.")
 		}
 	}()
-	panic("end.")
+	panic("throw panic")
 }

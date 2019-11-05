@@ -8,6 +8,6 @@ func main() {
 			log.Printf("recover: %v", err)
 		}
 	}()
-	
-	panic("qwertyuiop.")
+
+	panic("sim lou.")
 }

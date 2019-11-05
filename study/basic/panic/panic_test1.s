@@ -37,8 +37,8 @@
 	rel 59+4 t=8 runtime.morestack_noctxt+0
 go.cuinfo.packagename. SDWARFINFO dupok size=0
 	0x0000 6d 61 69 6e                                      main
-go.string."qwertyuiop." SRODATA dupok size=11
-	0x0000 71 77 65 72 74 79 75 69 6f 70 2e                 qwertyuiop.
+go.string."sim lou." SRODATA dupok size=8
+	0x0000 73 69 6d 20 6c 6f 75 2e                          sim lou.
 go.loc."".main SDWARFLOC size=0
 go.info."".main SDWARFINFO size=33
 	0x0000 03 22 22 2e 6d 61 69 6e 00 00 00 00 00 00 00 00  ."".main........
@@ -54,8 +54,8 @@ go.isstmt."".main SDWARFMISC size=0
 	0x0000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
 	0x0010 00 00 00 00 00 00 00 00                          ........
 ""..stmp_0 SRODATA size=16
-	0x0000 00 00 00 00 00 00 00 00 0b 00 00 00 00 00 00 00  ................
-	rel 0+8 t=1 go.string."qwertyuiop."+0
+	0x0000 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+	rel 0+8 t=1 go.string."sim lou."+0
 gclocals·33cdeccccebe80329f1fdbee7f5874cb SRODATA dupok size=8
 	0x0000 01 00 00 00 00 00 00 00                          ........
 gclocals·9fb7f0986f647f17cb53dda1484e0f7a SRODATA dupok size=10
