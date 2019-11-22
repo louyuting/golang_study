@@ -101,6 +101,21 @@ func main() {
 		} else if entityType == "targeting_term" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_TARGETING_TERM << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+		} else if entityType == "ad_unit" {
+			actualId := ^(uint64(ADS_ENTITY_TYPE_AD_UNIT << 56)) & wrappedId
+			actualIdStr = strconv.Itoa(int(actualId))
+		} else if entityType == "audience" {
+			actualId := ^(uint64(ADS_ENTITY_TYPE_AUDIENCE << 56)) & wrappedId
+			actualIdStr = strconv.Itoa(int(actualId))
+		} else if entityType == "targeting_criteria" {
+			actualId := ^(uint64(ADS_ENTITY_TYPE_TARGETING_CRITERIA << 56)) & wrappedId
+			actualIdStr = strconv.Itoa(int(actualId))
+		} else if entityType == "creative" {
+			actualId := ^(uint64(ADS_ENTITY_TYPE_CREATIVE << 56)) & wrappedId
+			actualIdStr = strconv.Itoa(int(actualId))
+		} else if entityType == "creative_rendition" {
+			actualId := ^(uint64(ADS_ENTITY_TYPE_CREATIVE_RENDITION << 56)) & wrappedId
+			actualIdStr = strconv.Itoa(int(actualId))
 		} else {
 			actualIdStr = "unknown entity type"
 		}

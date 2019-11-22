@@ -23,7 +23,8 @@ func main() {
 	fmt.Println("------------2--------------")
 	err3 := errors2.New("errors2")
 	err4 := errors2.WithStack(err3)
-	fmt.Printf("%+v", err4)
+	fmt.Printf("error3: %+v \n", err3)
+	fmt.Printf("error4: %+v \n", err4)
 
 	fmt.Println("------------3--------------")
 	printerr()
