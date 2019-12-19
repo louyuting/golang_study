@@ -83,39 +83,51 @@ func main() {
 		if entityType == "ad" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_ADVERTISEMENT << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "network" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_NETWORK << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "rule" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_MRM_RULE << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "rule_app" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_MRM_RULE_APPLICATION << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "asset" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_ASSET << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "section" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_SECTION << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "targeting_term" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_TARGETING_TERM << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "ad_unit" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_AD_UNIT << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "audience" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_AUDIENCE << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "targeting_criteria" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_TARGETING_CRITERIA << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "creative" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_CREATIVE << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else if entityType == "creative_rendition" {
 			actualId := ^(uint64(ADS_ENTITY_TYPE_CREATIVE_RENDITION << 56)) & wrappedId
 			actualIdStr = strconv.Itoa(int(actualId))
+
 		} else {
 			actualIdStr = "unknown entity type"
 		}

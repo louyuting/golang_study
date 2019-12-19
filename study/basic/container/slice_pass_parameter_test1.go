@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"strconv"
 	"unsafe"
 )
@@ -68,6 +69,12 @@ func main() {
 	testModifyElem(sa)
 	fmt.Printf("post sa address is %p \n", sa)
 	fmt.Println("post sa=", sa)
+
+	sa[0] = 100000
+	h := (*reflect.SliceHeader)(unsafe.Pointer(&sa))
+	fmt.Println(h.Data)
+	sa0Ptr := (*int)(unsafe.Pointer(h.Data))
+	fmt.Println(*sa0Ptr)
 
 	fmt.Println("------------------------slice1 -------------------------")
 	slice1 := make([]string, 5, 10)
