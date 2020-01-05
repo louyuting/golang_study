@@ -14,7 +14,6 @@ import (
 		      25 30  42   60 h=0
 
 父节点的左子树和右子树的高度之差不能大于1，
-
 */
 type AvlNode struct {
 	key   int
