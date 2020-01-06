@@ -1,6 +1,5 @@
 package main
 
-import "fmt"
 
 func PrintStr() {
 	str := new(string)

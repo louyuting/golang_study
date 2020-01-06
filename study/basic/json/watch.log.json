@@ -1,0 +1,49 @@
+[debug 19/12/23 14:51:34.043808 Ads_Selection_Context::request_data_privacy 1577112693000075028] Using MMO data right
+[debug 19/12/23 14:51:34.043818 Ads_Request_Data_Privacy::privatize_data 1577112693000075028] privatize data 108.22.200.125 with MACRO_FULL_RIGHT
+[debug 19/12/23 14:51:34.043846 Ads_Selection_Context::request_data_privacy 1577112693000075028] Using MMO data right
+[debug 19/12/23 14:51:34.043854 Ads_Request_Data_Privacy::privatize_data 1577112693000075028] privatize data 7dd74262-bda7-5a8b-b49f-f95525a557d4 with MACRO_FULL_RIGHT
+[trace 19/12/23 14:51:34.043877 Ads_Response::Smart_Rep::Ad_Set::Ad::Creative::Rendition::Rendition_Asset::build 1577112693000075028] no content or location is specified
+[debug 19/12/23 14:51:34.043902 selection::measurement::Ads_Closure_RBP_Info::generate_nielsen_inventory_beacon 1577112693000075028] rbp_info: Nielsen inventory beacon for reseller 379619 does not fire due to from unmeasurable environment
+[debug 19/12/23 14:51:34.043980 Ads_Selector::print_diagnostic_debug_log 1577112693000075028] Diagnostic Info watch:
+[
+	{
+		"adId": "29929474",
+		"watch": {
+			"msgs": [
+				"MAX_SLOT_DURATION"
+			],
+			"slots": [
+				{
+					"customId": "724384920160",
+					"msgs": [
+						"MAX_SLOT_DURATION ",
+						"effective_eCPM:0, competing_eCPM:0"
+					],
+					"creatives": [
+						{
+							"id": 14225140,
+							"msgs": [
+								"CREATIVE_FOUND",
+								"PROFILE_FOUND"
+							],
+							"profiles": []
+						}
+					]
+				},
+				{
+					"customId": "tracking-only",
+					"msgs": [
+						"INVALID_SLOT_TYPE"
+					],
+					"creatives": []
+				}
+			]
+		}
+	}
+]
+[debug 19/12/23 14:51:34.043986 Ads_Selector::print_diagnostic_debug_log 1577112693000075028] Diagnostic Info watch end
+[trace 19/12/23 14:51:34.046936 Ads_Selector::log_reject_reason 1577112693000075028] reject_reason: log reject reason ad num 0
+[debug 19/12/23 14:51:34.046953 Ads_Selector::log_request_i 1577112693000075028] log_request_i: ctx->section_id_ = 7536592
+[trace 19/12/23 14:51:34.047390 Ads_Selector::log_request_i 1577112693000075028] cro 511322 terms: 1:165,2:2279,3:68023,4:12,6:38,8:151734696,9:11183557,9:13501414,10:7536592,11:667216,11:673177,11:673179,11:673184,11:673185,11:673186,11:673202,11:694327,11:694330,11:706535,11:723954,11:727406,11:737900,12:67309,16:597,17:29,17:596,17:758,17:761,17:765,17:1008,17:1422,17:1633,17:1791,17:1877,17:2147,17:2199,17:2207,17:2615,17:2619,17:2645,17:2685,17:2715,17:2716,17:2738,17:2739,17:2767,17:2776,17:2780,17:2830,17:2831,17:2834,17:2835,17:2839,17:2845,17:2846,17:2847,17:2887,17:2910,17:2961,17:3202,17:3343,17:3346,17:3349,17:3350,17:3351,17:3370,17:3379,17:3410,17:3423,17:3429,17:3620,17:3631,17:3673,17:3690,17:3728,17:3742,17:4485,17:4543,17:4924,17:5012,17:5103,17:5105,17:5556,17:5563,17:5578,17:5641,18:4,18:9,18:15,18:16,18:23,18:32,18:40,18:50,18:69,18:73,18:82,18:92,18:108,18:117,18:122,18:128,18:139,18:163,18:166,18:177,18:179,18:181,18:189,18:218,18:227,18:232,18:238,18:241,18:244,18:254,18:263,18:272,18:277,18:285,18:290,18:293,18:295,18:302,18:306,18:339,18:342,18:347,18:348,18:351,18:352,18:355,18:357,18:359,18:361,18:371,18:379,18:381,18:382,18:385,18:386,18:394,18:395,18:404,18:405,18:409,18:412,18:413,18:414,18:417,18:418,18:419,18:420,18:421,18:422,18:431,18:434,18:442,18:445,18:448,18:449,18:450,18:455,18:460,19:235,19:1102,19:1221,19:1250,60:33,
+[trace 19/12/23 14:51:34.047595 Ads_Selector::log_request_i 1577112693000075028] add postal code package 1008 for network 384777
+[trace 19/12/23 14:51:34.047603 Ads_Selector::log_request_i 1577112693000075028] add postal code package 1422 for network 384777

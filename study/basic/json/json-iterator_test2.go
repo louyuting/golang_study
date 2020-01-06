@@ -31,7 +31,6 @@ var movies2 = []Movie2{
 }
 
 func main() {
-
 	json := jsoniter.ConfigCompatibleWithStandardLibrary
 	str1, _ := json.Marshal(&movies2)
 	str := string(str1[:])

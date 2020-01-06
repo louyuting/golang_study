@@ -1,0 +1,76 @@
+// 总的transaction是：8718
+
+MAX_SLOT_DURATION vg1277908,sg780513,   ->  1 
+MAX_SLOT_DURATION vg11494205,vg11494205,s7060717,s7060717,   ->  1 
+NO_APPLICABLE_POSITION   ->  1 
+MAX_SLOT_DURATION vg2947869,   ->  2 
+MAX_SLOT_DURATION vg11494205,vg11494205,   ->  3 
+FREQUENCY_CAP   ->  3 
+MAX_NUM_ADVERTISEMENTS   ->  3 
+//#####???
+NO_CREATIVE   ->  4 
+MAX_SLOT_DURATION   ->  7 
+RESTRICTION_CATEGORY_BLACKLIST vg2434169   ->  8 
+MAX_NUM_ADVERTISEMENTS    ->  9 
+UNSUPPORTED_BASE_AD_UNIT   ->  12 
+LARGE_DURATION    ->  14 
+RESTRICTION_RESELLER_WHITELIST-sg235410,   ->  16 
+RESTRICTION_CATEGORY_BLACKLIST-vg11183557   ->  16 
+INVALID_SLOT_TYPE   ->  22 
+
+// creative duration > slot max duration
+LARGE_DURATION-vg1277908,sg780513,   ->  33
+//#####
+NO_APPLICABLE_SLOT   ->  35 
+
+RESTRICTION_BLACKLIST   ->  40 
+SLOT_TYPE_UNMATCH   ->  72 
+
+//####
+UNSUPPORTED_WRAPPER_TYPE   ->  153 
+
+// phase 8 里给slot找可用的profile，
+PROFILE_FOUND   ->  191 
+
+NOT_RESELLABLE   ->  215 
+
+// phase 8 里面会给slot找可用的creative，找到可用的就会记录这个msg
+CREATIVE_FOUND   ->  297 
+
+//####
+UNSUPPORTED_PRIMARY_CONTENT_TYPE   ->  449 
+
+// creative 过期了会记，但是ad不一定fail了，可能只是ad的某一些creative过期了。
+DATE_RANGE   ->  528 
+
+
+
+//打这个是因为我们watch 的ad 属于一个不可达的closure。也就是说我们watch的ad在某些transaction里面不在closure链里面。
+// 这样看来NO_SLOT_ASSIGNED_THROUGH_MRM属于噪点了
+NO_SLOT_ASSINGED_THROUGH_MRM   ->  52394 
+
+// watch的ad，targeting fail了，这部分ad是在phase6选择出来的ad集合之外。
+// 1. 和NO_SLOT_ASSINGED_THROUGH_MRM 重合；
+// 2. ad所在closure在transaction的closure链表里面，但是不在phase6收集的ad list里面
+// 3. ad所在closure在transaction的closure链表里面，但是也在phase6收集的ad list里面，但是targeting失败了。
+TARGETING_NOT_MET   ->  128504 
+
+// watch的ad不在transaction 的 closure 链里面
+AD_OUT_OF_CLOSURE   ->  268296 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

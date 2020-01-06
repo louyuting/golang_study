@@ -1,0 +1,45 @@
+[
+	{
+		"adId" : "29929474",
+		"watch" : {
+			"msgs" : [
+				"MAX_SLOT_DURATION"
+			],
+			"slots" : [
+				{
+					"customId" : "724384920160",
+					"msgs" : [
+						"MAX_SLOT_DURATION ",
+						"effective_eCPM:0, competing_eCPM:0"
+					],
+					"creatives" : [
+						{
+							"id" : 14225140,
+							"msgs" : [
+								"CREATIVE_FOUND",
+								"PROFILE_FOUND"
+							],
+							"profiles" : []
+						}
+					]
+				},
+				{
+					"customId" : "tracking-only",
+					"msgs" : [
+						"INVALID_SLOT_TYPE"
+					],
+					"creatives" : []
+				}
+			]
+		}
+	},
+	{
+		"adId" : "13310117",
+		"watch" : {
+			"msgs" : [
+				"AD_OUT_OF_CLOSURE"
+			],
+			"slots" : []
+		}
+	}
+]

@@ -28,4 +28,7 @@ func main() {
 	fmt.Println(unsafe.Sizeof(workbufhdr{}))
 	fmt.Println(PtrSize)
 	fmt.Println((2048 - unsafe.Sizeof(workbufhdr{})) / PtrSize)
+	
+	sss:="]"
+	fmt.Println(len(sss))
 }
