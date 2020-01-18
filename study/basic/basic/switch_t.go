@@ -8,8 +8,7 @@ func number() int {
 }
 
 func main() {
-
-	finger := 4
+	finger := 1
 	switch finger {
 	case 1:
 		fmt.Println("Thumb")
