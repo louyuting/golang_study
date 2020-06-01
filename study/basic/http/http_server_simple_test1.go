@@ -7,10 +7,11 @@ import (
 )
 
 func myHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello there!\n")
+
+	fmt.Fprintf(w, "Hello %s, %s\n", r.RequestURI, r.URL)
 }
 
 func main() {
-	http.HandleFunc("/", myHandler) //	设置访问路由
+	http.HandleFunc("/aaaaa/bbbbb", myHandler) //	设置访问路由
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
