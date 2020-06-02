@@ -1,4 +1,4 @@
-package unsafe
+package main
 
 import (
 	"fmt"
@@ -20,7 +20,7 @@ type Part2 struct {
 	d int64
 }
 
-func main() {
+func main3() {
 	fmt.Printf("bool size: %d\n", unsafe.Sizeof(bool(true)))
 	fmt.Printf("int32 size: %d\n", unsafe.Sizeof(int32(0)))
 	fmt.Printf("int8 size: %d\n", unsafe.Sizeof(int8(0)))

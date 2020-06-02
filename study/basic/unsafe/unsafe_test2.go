@@ -1,4 +1,4 @@
-package unsafe
+package main
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ type nn struct {
 	val  string
 }
 
-func main() {
+func main2() {
 	fmt.Println(1 << 7)
 	test := new(nn)
 	fmt.Println(test.name)
