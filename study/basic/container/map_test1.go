@@ -12,9 +12,11 @@ func main() {
 	// 创建一个map, KV都是String
 	//dict2 := map[string]string{"red":"#da2222", "orange":"#e32323"}
 
-	dict["red"] = 1
-	for k, v := range dict {
-		fmt.Println("k=", k, ";", "v=", v)
+	dict["red1"] = 1
+	dict["red2"] = 2
+	dict["red3"] = 3
+	for k := range dict {
+		fmt.Println("k=", k, ";")
 	}
 	fmt.Println("--map 判断键是否存在------------------------------------")
 	value1, exist1 := dict["red"]

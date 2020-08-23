@@ -16,7 +16,11 @@ func main() {
 	fmt.Println(unsafe.Sizeof(uint32(111)))
 
 	fmt.Println(time.Now().UnixNano())
-	
+
 	fmt.Println("Ptr size:", unsafe.Sizeof(new(int)))
 	//	1576131855795
+
+	var a []string
+
+	fmt.Println(len(a))
 }

@@ -1,4 +1,4 @@
-package receiver
+package main
 
 import "fmt"
 
@@ -9,11 +9,13 @@ type Person struct {
 
 func (p Person) howOld() int {
 	fmt.Printf("internal howOld, addrss is %p \n", &p)
+	p.name = "ximu1"
 	return p.age
 }
 
 func (p Person) howOld2() int {
 	fmt.Printf("internal howOld2, addrss is %p \n", &p)
+	p.name = "ximu2"
 	return p.age
 }
 

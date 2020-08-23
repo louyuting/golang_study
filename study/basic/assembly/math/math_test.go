@@ -1,7 +1,6 @@
 package main
 
 import (
-	"sync/atomic"
 	"testing"
 )
 
@@ -25,5 +24,4 @@ func BenchmarkAddAsm(b *testing.B) {
 		r = add(int(i), int(i))
 	}
 	Result = r
-	atomic.AddInt64()
 }
