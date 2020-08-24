@@ -5,21 +5,17 @@ import (
 	"reflect"
 )
 
-type Test struct {
-	name string
-	id   int64
+type A struct {
+	Foo string
 }
 
 func main() {
-	typez := reflect.TypeOf(1112222222222222)
-	fmt.Println(typez)
-
-	t := &Test{
-		name: "sim1",
-		id:   1,
+	a := &A{Foo: "ytlou"}
+	val := reflect.ValueOf(a).Elem()
+	typ := reflect.TypeOf(a.Foo)
+	fmt.Println(typ)
+	fmt.Println(val)
+	for i := 0; i < val.NumField(); i++ {
+		fmt.Println(val.Type().Field(i).Name)
 	}
-	reflectV := reflect.ValueOf(t)
-	fmt.Println(reflectV.Kind())
-	fmt.Println(reflectV.Elem())
-	fmt.Println(reflectV.Type())
 }

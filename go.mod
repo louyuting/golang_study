@@ -14,12 +14,12 @@ require (
 	github.com/shirou/gopsutil v2.20.1+incompatible
 	github.com/tidwall/gjson v1.3.0
 	github.com/valyala/fasthttp v1.7.1
-	golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+	golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
 	golang.org/x/net v0.0.0-20200301022130-244492dfa37a // indirect
 	golang.org/x/sys v0.0.0-20200317113312-5766fd39f98d // indirect
-	golang.org/x/text v0.3.2 // indirect
 	google.golang.org/appengine v1.6.0 // indirect
 	google.golang.org/genproto v0.0.0-20200317114155-1f3552e48f24 // indirect
-
 	google.golang.org/grpc v1.28.0
+	k8s.io/apimachinery v0.17.6
+	k8s.io/client-go v0.17.6
 )

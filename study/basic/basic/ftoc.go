@@ -3,6 +3,11 @@ package main
 import "fmt"
 
 func main() {
+
+	if 10%10 == 1 {
+		fmt.Println()
+	}
+
 	const freezingF, boilingF = 32.0, 212.0
 	fmt.Printf("F= %gF = %g C", freezingF, fToC(freezingF))
 	fmt.Println()

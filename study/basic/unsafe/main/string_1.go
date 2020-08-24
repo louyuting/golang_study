@@ -51,4 +51,8 @@ func main() {
 	fmt.Printf("%p\n", &str)
 	passStr(str)
 
+	str2 := str
+	strHeader22 := (*reflect.StringHeader)(unsafe.Pointer(&str2))
+	fmt.Printf("0x%x\n", strHeader22.Data)
+	fmt.Printf("%p\n", &str2)
 }
