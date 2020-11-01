@@ -13,18 +13,18 @@ import (
 
 func main() {
 	s := time.Now().UnixNano()
-	for i := 0; i < 10000000; i++ {
+	for i := 0; i < 100000000; i++ {
 		C.printString()
 	}
 	e := time.Now().UnixNano()
-	fmt.Println("cgo", e-s, "ns")
+	fmt.Println("cgo:", e-s, "ns")
 
 	s = time.Now().UnixNano()
-	for i := 0; i < 10000000; i++ {
+	for i := 0; i < 100000000; i++ {
 		empty()
 	}
 	e = time.Now().UnixNano()
-	fmt.Println(e-s, "ns")
+	fmt.Println("go:", e-s, "ns")
 }
 
 func empty() {

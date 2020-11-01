@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"runtime"
 	"time"
 	"unsafe"
 )
@@ -23,4 +24,5 @@ func main() {
 	var a []string
 
 	fmt.Println(len(a))
+
 }
