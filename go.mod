@@ -12,7 +12,8 @@ require (
 	github.com/pkg/errors v0.8.1
 	github.com/satori/go.uuid v1.2.0
 	github.com/shirou/gopsutil v2.20.1+incompatible
-	github.com/tidwall/gjson v1.3.0
+	github.com/stretchr/testify v1.4.0
+	github.com/tidwall/gjson v1.9.3
 	github.com/valyala/fasthttp v1.7.1
 	golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
 	golang.org/x/net v0.0.0-20200301022130-244492dfa37a // indirect
